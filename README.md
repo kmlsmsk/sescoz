@@ -1,4 +1,4 @@
-# 🎙️ Akıllı Ses Asistanı | Çözümleyici (Web Uygulaması)
+# 🎙️ Akıllı Ses Çözümleme Uzmanı (ASÇ)
 
 Bu proje, ses dosyalarınızı veya anlık mikrofon kayıtlarınızı yapay zeka (Google Gemini API) kullanarak yüksek doğrulukla metne dönüştüren, aynı zamanda metindeki dil bilgisi hatalarını düzelterek iyileştiren tarayıcı tabanlı bir web uygulamasıdır.
 
@@ -21,7 +21,7 @@ Bu uygulama tamamen statik HTML, CSS ve JavaScript'ten oluşur. Node.js veya her
 ### Yerel Ortamda Çalıştırma
 1. Bu depoyu bilgisayarınıza indirin veya klonlayın:
    ```bash
-   git clone https://github.com/kmlsmsk/sesanaliz.git
+   git clone https://github.com/kmlsmsk/sescoz.git
 
 
 ## 📁 Dosya Yapısı
