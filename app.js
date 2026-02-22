@@ -489,15 +489,18 @@
             let p=0; const t = setInterval(() => { if(p<90){ p+=Math.random()*5; els.prog.style.width=p+'%'; } }, 500);              
             
             try {                 
-                const promptText = `
-Sen bir Türkçe Ses Çözümleme Uzmanısın ve aynı zamanda metin iyileştirme Agent'ısın.
-Görevin, sana verilen ses dosyasını dikkatlice dinleyerek Türkçe metne çevirmek.
-Çeviri sırasında aşağıdaki adımları izle:
-1. Sesi doğru bir şekilde Türkçe metne dök. Konuşmacı değişikliklerini veya önemli duraklamaları yeni paragraflar başlatarak belirtmeye çalış.
-2. Metindeki olası dil bilgisi, yazım ve anlam hatalarını tespit et.
-3. Tespit ettiğin bu hataları düzelt.
-4. Metni daha akıcı, anlaşılır ve doğal hale getirmek için iyileştirmeler yap.
-5. Sonuç olarak SADECE ve SADECE nihai, düzeltilmiş ve iyileştirilmiş Türkçe metni ver. Başka hiçbir açıklama ekleme.`;                  
+                const promptText = `Sen profesyonel bir "Deşifre ve Transkripsiyon Uzmanı"sın.
+    GÖREVİN: Sana verilen ses dosyasındaki konuşmaların tamamını, tek bir cümle bile atlamadan yazıya dökmektir.
+
+    KURALLAR:
+    1. ASLA ÖZETLEME YAPMA. Konuşulan her şeyi eksiksiz aktar.
+    2. "Verbatim" (Kelimesi kelimesine) yaklaşımını benimse, ancak okunabilirliği sağlamak için sadece şunları temizle:
+       - "Eee", "hımm", "şey" gibi gereksiz dolgu kelimeleri.
+       - Kekelemeler ve tekrarlar.
+       - Çok bariz, kulağı tırmalayan gramer hataları (anlamı bozmadan).
+    3. Konuşmacı değişimlerini veya konu geçişlerini yeni paragraflarla belirt.
+    4. Konuşmacının üslubuna dokunma, sadece metni temiz ve okunabilir bir tutanak haline getir.
+    5. Çıktı olarak sadece deşifre edilmiş metni ver. `;                  
                 
                 const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${CFG.MODEL}:generateContent?key=${apiKey}`, {                     
                     method: 'POST', headers: {'Content-Type': 'application/json'},                     
